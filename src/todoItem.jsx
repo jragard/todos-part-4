@@ -12,11 +12,11 @@ class TodoItem extends Component {
           <li className={completed ? "completed" : ""} >
             <div className="view">
                           
-                <input id={index} className="toggle" type="checkbox" onChange={toggleTodo}/>
+                <input checked={completed} id={index} className="toggle" type="checkbox" onChange={toggleTodo}/>
                 <label>{value}</label>
                 <button className="destroy" id={index} onClick={removeItem}></button>
           
-                </div>
+            </div>
           </li>
         </React.Fragment>
       );

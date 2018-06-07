@@ -5,6 +5,9 @@ import './index.css';
 import App from './app.jsx';
 import list from './todos.json';
 
+console.log(process.env.NODE_ENV);
+
+
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -103,7 +106,7 @@ class Index extends Component {
         const CompletedList = todos.filter(todo => todo.completed);
 
         return(
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.NODE_ENV === 'production' ? "/todos-part-3" : "/"}>
         <Switch>
 
             <Route 
@@ -115,7 +118,7 @@ class Index extends Component {
             <Route
             path="/completed"
             render={props => <App {...props} todos={CompletedList} text={text} toggleTodo={toggleTodo} removeItem={removeItem} removeAll={removeAll} handleChange={handleChange} handleSubmit={handleSubmit} />} />
-
+            
         </Switch>
     </BrowserRouter>
         )
