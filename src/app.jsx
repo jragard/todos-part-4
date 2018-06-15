@@ -20,7 +20,6 @@ class App extends Component {
   }
 
   render() {
-    const { text } = this.props;
     const { handleSubmit, handleChange } = this;
 
     return (
@@ -47,13 +46,13 @@ class App extends Component {
 
             <Route
               exact path="/"
-              render={props => <TodoList {...props} filter="all" text={text} />} />
+              render={props => <TodoList {...props} filter="all" />} />
             <Route
               path="/active"
-              render={props => <TodoList {...props} filter="active" text={text} />} />
+              render={props => <TodoList {...props} filter="active" />} />
             <Route
               path="/completed"
-              render={props => <TodoList {...props} filter="completed" text={text} />} />
+              render={props => <TodoList {...props} filter="completed" />} />
 
           </Switch>
 
