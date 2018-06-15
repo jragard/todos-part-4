@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import './index.css';
 import TodoItem from './todoItem.jsx';
-import markCompleted from './actions.js'
 import './reducer.js'
-import store from './index.js'
 import { connect } from 'react-redux';
-import list from './todos.json'
-
-
 
 class TodoList extends Component {
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import TodoList from './todoList.jsx';
 import { Route, Switch, Link } from 'react-router-dom';
-import list from './todos.json';
 import { connect } from 'react-redux';
 import { addTodo, clearComplete } from './actions.js'
 import { withRouter } from 'react-router';
