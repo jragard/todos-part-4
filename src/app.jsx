@@ -4,6 +4,7 @@ import TodoList from './todoList.jsx';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addTodo } from './actions.js'
+import { withRouter } from 'react-router-dom';
 
 class App extends Component {
 
@@ -85,7 +86,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
 
 
 
