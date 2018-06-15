@@ -21,9 +21,7 @@ const todosReducer = (state = initialState, action) => {
             };
         case ADD_TODO:
 
-            let newState = {
-                ...state
-            }
+            
             if (!action.payload.length) {
                 return;
             }
@@ -41,7 +39,7 @@ const todosReducer = (state = initialState, action) => {
                 let removedArray = [];
                 
                 for (let i = 0; i < state.todos.length; i++) {
-                    if (action.payload != state.todos[i].id) {
+                    if (action.payload !== state.todos[i].id) {
                         removedArray.push(state.todos[i])
                     }
                 }

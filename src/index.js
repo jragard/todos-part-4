@@ -12,11 +12,11 @@ let store = createStore(todosReducer,
 );
 
 render(
+  <Provider store={store}>
     <BrowserRouter>
-      <Provider store={store}>  
         <App />
-      </Provider>  
-    </BrowserRouter>, document.getElementById('root'));
+    </BrowserRouter>
+    </Provider>, document.getElementById('root'));
 registerServiceWorker();
 
 export default store;
