@@ -12,7 +12,7 @@ let store = createStore(todosReducer,
 );
 
 render(
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/todos-part-4" : "/"}>
       <Provider store={store}>  
         <App />
       </Provider>  
