@@ -12,11 +12,11 @@ let store = createStore(todosReducer,
 );
 
 render(
-    <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/todos-part-4" : "/"}>
-      <Provider store={store}>  
-        <App />
-      </Provider>  
-    </BrowserRouter>, document.getElementById('root'));
+  <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/todos-part-4" : "/"}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();
 
 export default store;

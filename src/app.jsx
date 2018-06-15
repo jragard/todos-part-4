@@ -8,17 +8,9 @@ import { withRouter } from 'react-router-dom';
 
 class App extends Component {
 
-// removes all todo Items marked as complete when user clicks the "clear completed" button
-
-  
-
-// changes the "text" state to whatever the user inputs into the field
-
   handleChange = (e) => {
     this.setState({ text: e.target.value })
   }
-
-// handles the submit event when user presses enter.  updates state to include user's todo item
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -26,19 +18,16 @@ class App extends Component {
     let inputField = document.getElementById("input");
     inputField.value = "";
   }
-  
-render() { 
+
+  render() {
     const { text } = this.props;
     const { handleSubmit, handleChange } = this;
-
-    // const ActiveList = this.props.todos.filter(todo => !todo.completed);
-    // const CompletedList = this.props.todos.filter(todo => todo.completed);
 
     return (
       <React.Fragment>
 
         <section className="todoapp">
-        
+
           <header className="header">
             <h1>todos</h1>
             <form onSubmit={handleSubmit}>
@@ -52,26 +41,26 @@ render() {
             </form>
           </header>
 
-         
 
-            <Switch>
 
-                <Route 
-                exact path="/"
-                render={props => <TodoList {...props}  filter="all" text={text} /> } />
-                <Route
-                path="/active"
-                render={props => <TodoList {...props} filter="active" text={text} /> } />
-                <Route
-                path="/completed"
-                render={props => <TodoList {...props}  filter="completed" text={text} />} />
+          <Switch>
 
-            </Switch>
-           
-          
+            <Route
+              exact path="/"
+              render={props => <TodoList {...props} filter="all" text={text} />} />
+            <Route
+              path="/active"
+              render={props => <TodoList {...props} filter="active" text={text} />} />
+            <Route
+              path="/completed"
+              render={props => <TodoList {...props} filter="completed" text={text} />} />
 
-          
-        
+          </Switch>
+
+
+
+
+
         </section>
 
       </React.Fragment>

@@ -10,12 +10,10 @@ class TodoList extends Component {
 
   removeAll = (e) => {
     this.props.dispatch(clearComplete())
- }
+  }
 
   render() {
     const { todos } = this.props;
-
-
 
     return (
 
@@ -43,8 +41,6 @@ class TodoList extends Component {
             </li>
 
           </ul>
-
-
 
           <button onClick={this.removeAll} className="clear-completed">Clear completed</button>
 
