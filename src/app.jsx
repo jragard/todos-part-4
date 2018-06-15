@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import TodoList from './todoList.jsx';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addTodo, clearComplete } from './actions.js'
-import { withRouter } from 'react-router';
+import { addTodo } from './actions.js'
 
 class App extends Component {
 
 // removes all todo Items marked as complete when user clicks the "clear completed" button
 
-  removeAll = (e) => {
-    this.props.dispatch(clearComplete())
- }
+  
 
 // changes the "text" state to whatever the user inputs into the field
 
@@ -31,7 +28,7 @@ class App extends Component {
   
 render() { 
     const { text } = this.props;
-    const { removeAll, handleSubmit, handleChange } = this;
+    const { handleSubmit, handleChange } = this;
 
     // const ActiveList = this.props.todos.filter(todo => !todo.completed);
     // const CompletedList = this.props.todos.filter(todo => todo.completed);
@@ -54,7 +51,7 @@ render() {
             </form>
           </header>
 
-          <section className="main">
+         
 
             <Switch>
 
@@ -70,28 +67,9 @@ render() {
 
             </Switch>
            
-          </section>
+          
 
-          <footer className="footer">
-            
-            <span className="todo-count"><strong>{this.props.todos.filter(todo => !todo.completed).length}</strong> item(s) left</span>
-
-            <ul className="filters">
-           <li>
-             <Link to="/">All</Link>
-           </li>
-           <li>
-             <Link to="/active">Active</Link>
-           </li>
-           <li>
-             <Link to="/completed">Completed</Link>
-           </li>
-         </ul>
-
-            <button onClick={removeAll} className="clear-completed">Clear completed</button>
-            
-          </footer>
-
+          
         
         </section>
 
@@ -107,7 +85,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(App));
+export default connect(mapStateToProps)(App);
 
 
 

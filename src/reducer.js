@@ -20,6 +20,7 @@ const todosReducer = (state = initialState, action) => {
                 })
             };
         case ADD_TODO:
+
             if (!action.payload.length) {
                 return;
             }
